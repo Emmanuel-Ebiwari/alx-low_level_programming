@@ -8,13 +8,11 @@ int main(void)
 	long int LIType;
 	long long int LLIType;
 	float floatType;
-	double doubleType;
 	char charType;
-	
-	printf("Size of char: %zu bytes\n", sizeof(charType));
-	printf("Size of int: %zu bytes\n", sizeof(intType));
-	printf("Size of long int: %zu bytes\n", sizeof(LIType));
-	printf("Size of long long int: %zu byte\n", sizeof(LLIType));
-	printf("Size of float: %zu byte\n", sizeof(floatType));
+	printf("Size of char: %c bytes\n", sizeof(charType));
+	printf("Size of int: %i bytes\n", sizeof(intType));
+	printf("Size of long int: %li bytes\n", sizeof(LIType));
+	printf("Size of long long int: %lli byte\n", sizeof(LLIType));
+	printf("Size of float: %f byte\n", sizeof(floatType));
 	return (0);
 }
