@@ -9,6 +9,7 @@
  * @floatType: fifth variable
  *
  * Description: This is a longer description.
+ *
  * Return: The sum of the two parameters
  */
 int main(void)
