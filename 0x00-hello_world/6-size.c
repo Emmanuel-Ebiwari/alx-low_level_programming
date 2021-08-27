@@ -2,11 +2,6 @@
 /**
  * main - Prints the size of various types on
  * the computer it is compiled and run on.
- * @intType: First variable
- * @charType: Second variable
- * @LIType: third variable
- * @LLIType: fourth variable
- * @floatType: fifth variable
  *
  * Description: This is a longer description.
  *
