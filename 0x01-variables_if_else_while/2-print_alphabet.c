@@ -6,6 +6,10 @@
  */
 int main(void)
 {
-	putchar("");
+	for (ch = 'a'; ch <= 'z'; ch++)
+	{
+	printf("%c ", ch);
+	}
+
 	return (0);
 }
