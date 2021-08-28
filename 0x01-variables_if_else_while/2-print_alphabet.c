@@ -10,7 +10,7 @@ int main(void)
 
 	for (ch = 'a'; ch <= 'z'; ch++)
 	{
-	printf("%c ", ch);
+	printf("%c", ch);
 	}
 
 	return (0);
