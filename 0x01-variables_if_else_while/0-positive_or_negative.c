@@ -5,7 +5,7 @@
  * main - prints a random number and a description
  * of it
  *
- * Return: n
+ * Return: 0
  */
 int main(void)
 {
@@ -20,5 +20,5 @@ int main(void)
 	else
 	printf("%i is negative\n", n);
 
-	return (n);
+	return(0);
 }
