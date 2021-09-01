@@ -8,7 +8,7 @@
 int main(void)
 {
 	int no = 1024;
-	int i, j;
+	int i;
 	int output = 0;
 
 	for (i = 0; i < no; i++)
