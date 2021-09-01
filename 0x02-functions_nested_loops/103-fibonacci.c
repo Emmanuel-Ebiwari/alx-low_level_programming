@@ -12,18 +12,11 @@ int main(void)
 	long int n2 = 2;
 	long int sum = n1 + n2;
 	int i;
-
-	printf("%li, %li, ", n1, n2);
-	for (i = 3; i <= 50; ++i)
+	while(sum  < 4000000)
 	{
-		if ((sum % 2 == 0) || sum <= 4000000)
+		if (sum % 2 == 0)
 		{
-			printf("%li", sum);
-			if (i < 50)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			printf("%li", sum += sum);
 		}
 		else
 		{
