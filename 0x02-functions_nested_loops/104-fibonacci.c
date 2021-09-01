@@ -14,10 +14,10 @@ int main(void)
 	int i;
 
 	printf("%lu, %lu, ", n1, n2);
-	for (i = 3; i <= 91; ++i)
+	for (i = 3; i <= 80; ++i)
 	{
 		printf("%lu", sum);
-		if (i < 91)
+		if (i < 80)
 		{
 			putchar(',');
 			putchar(' ');
