@@ -8,15 +8,17 @@
 int main(void)
 {
 	int no = 1024;
-	int i;
+	int i, j;
+	int output = 0;
 
 	for (i = 0; i < no; i++)
-	{
-		if (i % 3 != 0 || i % 5 != 0)
+	{ 
+		if ((i % 3 != 0) || (i % 5 != 0))
 			continue;
 		else
-			printf("%i, ", i);
+			output += i;
 	}
+	printf("%i ", output);
 	putchar('\n');
 	return (0);
 }
