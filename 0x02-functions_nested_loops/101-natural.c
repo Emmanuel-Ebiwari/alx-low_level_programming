@@ -7,11 +7,10 @@
  */
 int main(void)
 {
-	int no = 1024;
 	int i;
 	int output = 0;
 
-	while (i < no)
+	while (i < 1024)
 	{
 		if ((i % 3 == 0) || (i % 5 == 0))
 		{
