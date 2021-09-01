@@ -11,14 +11,14 @@ int main(void)
 	int i;
 	int output = 0;
 
-	for (i = 0; i < no; i++)
-	{ 
-		if ((i % 3 != 0) || (i % 5 != 0))
-			continue;
-		else
+	while (i < no)
+	{
+		if ((i % 3 == 0) || (i % 5 == 0))
+		{
 			output += i;
+		}
+		i++;
 	}
-	printf("%i ", output);
-	putchar('\n');
+	printf("%i\n", output);
 	return (0);
 }
