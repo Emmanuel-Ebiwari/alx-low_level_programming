@@ -6,7 +6,7 @@
  * instead of the number and for the multiples of five
  * print Buzz. For numbers which are multiples of both
  * three and five print FizzBuzz.
- * 
+ *
  * Return: 0
  */
 int main(void)
@@ -15,7 +15,7 @@ int main(void)
 	char f[] = "Fizz";
 	char b[] = "Buzz";
 	char fb[] = "FizzBuzz";
-	
+
 	for (i = 0; i <= 100; i++)
 	{
 		if (i > 0)
