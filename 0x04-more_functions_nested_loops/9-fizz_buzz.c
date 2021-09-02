@@ -16,25 +16,34 @@ int main(void)
 	char b[] = "Buzz";
 	char fb[] = "FizzBuzz";
 
-	for (i = 0; i <= 100; i++)
+	for (i = 1; i <= 100; i++)
 	{
-		if (i > 0)
-		{
 		if ((i % 3 == 0) && (i % 5 == 0))
 		{
-			printf("%s ", fb);
+			if (i < 100)
+				printf("%s ", fb);
+			else
+				printf("%s", fb);
 		}
 		else if (i % 5 == 0)
 		{
-			printf("%s ", b);
+			if (i < 100)
+				printf("%s ", b);
+			else
+				printf("%s", b);
 		}
 		else if (i % 3 == 0)
 		{
-			printf("%s ", f);
+			if (i < 100)
+				printf("%s ", f);
+			else
+				printf("%s", f);
 		}
 		else
-			printf("%i ", i);
-		}
+			if (i < 100)
+				printf("%i ", i);
+			else
+				printf("%i", i);
 	}
 	putchar('\n');
 
