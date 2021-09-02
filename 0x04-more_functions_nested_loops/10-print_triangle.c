@@ -2,12 +2,12 @@
 
 /**
  * print_triangle - prints a triangle, followed by a new line
- * @n: line count
+ * @size: triangle size
  *
  */
 void print_triangle(int size)
 {
-	int x = 0;
+	int x;
 	int y;
 
 	if (size > 0)
