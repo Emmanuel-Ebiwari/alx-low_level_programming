@@ -17,7 +17,7 @@ int _strlen(char *s)
 }
 
 /**
- * _puts_half - prints half of a string, followed by a new line
+ * puts_half - prints half of a string, followed by a new line
  *
  * @str: string
  */
@@ -30,7 +30,7 @@ void puts_half(char *str)
 
 	for (i = half; i < len; i++)
 	{
-		_putchar(*str);
+		_putchar(str[i]);
 	}
 	_putchar('\n');
 }
