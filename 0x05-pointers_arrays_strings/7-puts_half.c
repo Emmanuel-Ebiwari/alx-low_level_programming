@@ -17,21 +17,20 @@ int _strlen(char *s)
 }
 
 /**
- * puts2 - prints every other character of a string,
- * starting with the first character, followed by
- * a new line
+ * _puts_half - prints half of a string, followed by a new line
  *
  * @str: string
  */
-void puts2(char *str)
+void puts_half(char *str)
 {
-	int len, i;
+	int len = _strlen(str);
+	int i, half;
 
-	len = _strlen(str);
+	half = len % 2 == 0 ? len / 2 : (len - 1) / 2 + 1;
 
-	for (i = 0; i < len; i += 2)
+	for (i = half; i < len; i++)
 	{
-		_putchar(str[i]);
+		_putchar(*str);
 	}
 	_putchar('\n');
 }
