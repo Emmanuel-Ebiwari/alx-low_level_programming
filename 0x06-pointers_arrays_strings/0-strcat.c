@@ -3,7 +3,7 @@
  * _strcat - concatenates two strings.
  *
  * @dest: string
- * @src - string
+ * @src: string
  *
  * Return: string
  */
