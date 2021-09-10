@@ -1,15 +1,12 @@
 #include "main.h"
 /**
  * cap_string - capitalizes all words of a string
- *
  * @s: string
- *
  * Return: string
  */
 char *cap_string(char *s)
 {
 	int i;
-/*	char d[] = ",\t;\n; .!?\"(){}";*/
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -19,28 +16,9 @@ char *cap_string(char *s)
 				s[i] -= 32;
 			continue;
 		}
-		if (s[i] == ' ' ||  s[i] == '\n')
+		if (s[i] == ' ' ||  s[i] == '\n' || s[i] == '.')
 		{
 			++i;
-			if (s[i] >= 'a' && s[i] <= 'z')
-			{
-				s[i] -= 32;
-				continue;
-			}
-		}
-		else if (s[i] == '\t')
-		{
-			s[i] = ' ';
-			++i;
-			if (s[i] >= 'a' && s[i] <= 'z')
-			{
-				s[i] -= 32;
-				continue;
-			}		
-		}
-		else if (s[i] == '.')
-		{
-                        ++i;
 			if (s[i] >= 'a' && s[i] <= 'z')
 			{
 				s[i] -= 32;
@@ -56,7 +34,16 @@ char *cap_string(char *s)
 				}
 			}
 		}
-
+		else if (s[i] == '\t')
+		{
+			s[i] = ' ';
+			++i;
+			if (s[i] >= 'a' && s[i] <= 'z')
+			{
+				s[i] -= 32;
+				continue;
+			}
+		}
 		else
 		{
 			if (s[i] >= 'A' && s[i] <= 'Z')
