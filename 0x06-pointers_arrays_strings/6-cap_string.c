@@ -19,7 +19,7 @@ char *cap_string(char *s)
 				s[i] -= 32;
 			continue;
 		}
-		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		if (s[i] == ' ' ||  s[i] == '\n')
 		{
 			++i;
 			if (s[i] >= 'a' && s[i] <= 'z')
@@ -28,6 +28,35 @@ char *cap_string(char *s)
 				continue;
 			}
 		}
+		else if (s[i] == '\t')
+		{
+			s[i] = ' ';
+			++i;
+			if (s[i] >= 'a' && s[i] <= 'z')
+			{
+				s[i] -= 32;
+				continue;
+			}		
+		}
+		else if (s[i] == '.')
+		{
+                        ++i;
+			if (s[i] >= 'a' && s[i] <= 'z')
+			{
+				s[i] -= 32;
+				continue;
+			}
+			else
+			{
+				++i;
+				if (s[i] >= 'a' && s[i] <= 'z')
+				{
+					s[i] -= 32;
+					continue;
+				}
+			}
+		}
+
 		else
 		{
 			if (s[i] >= 'A' && s[i] <= 'Z')
