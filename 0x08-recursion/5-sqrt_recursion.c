@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _sqrt_recursion - returns the natural square root of a number
+ * isSqrt - returns the natural square root of a number
  *
  * @n: integer
  * @i: integer
@@ -13,7 +13,7 @@ int isSqrt(int n, int i)
 		return (i);
 	if (i * i > n)
 		return (-1);
-        return (isSqrt(n, i + 1));
+	return (isSqrt(n, i + 1));
 }
 
 
