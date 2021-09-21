@@ -22,9 +22,7 @@ int main(int argc, char *argv[])
 			}
 		sum += atoi(argv[i]);
 		}
-	if (argc > 1)
-		printf("%d\n", sum);
-	else
-		printf("0\n");
+
+	argc > 1 ? printf("%d\n", sum) : printf("0\n");
 	return (0);
 }
