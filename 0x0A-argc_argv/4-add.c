@@ -1,29 +1,25 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
- * main - adds positive numbers
- *
+ * main - adds all positive numbers and prints it
  * @argc: argument count
- * @argv: argument array
- *
- * Return: 0
+ * @argv: argument vector
+ * Return: 0 if no errors, 1 if invalid argument
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i, j, res = 0;
 
 	if (argc > 1)
 		for (i = 1; i < argc; i++)
 		{
-			if (!(*argv[i] >= '0' && *argv[i] <= '9'))
-			{
-				printf("Error\n");
-				return (1);
-			}
-		sum += atoi(argv[i]);
+			for (j = 0; argv[i][j]; j++)
+				if (argv[i][j] < '0' || argv[i][j] > '9')
+					return (printf("Error\n"), 1);
+			res += atoi(argv[i]);
 		}
-
-	argc > 1 ? printf("%d\n", sum) : printf("0\n");
+	printf("%i\n", res);
 	return (0);
 }
