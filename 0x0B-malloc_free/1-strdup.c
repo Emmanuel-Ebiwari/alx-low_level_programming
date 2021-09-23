@@ -34,10 +34,10 @@ char *_strdup(char *str)
 
 	len = _strlen(str);
 
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 
-	dup = (char *)malloc(sizeof(char) * len + 1);
+	dup = malloc((len + 1) * sizeof(char));
 
 	store_dup = dup;
 
