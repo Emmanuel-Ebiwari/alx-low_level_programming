@@ -27,11 +27,11 @@ int _strlen(char *s)
  *
  *  Return: pointer
  */
- char *_strdup(char *str)
+char *_strdup(char *str)
 {
 	char *dup, *store_dup;
 	int len;
-	
+
 	len = _strlen(str);
 
 	if (str == NULL)
@@ -40,11 +40,12 @@ int _strlen(char *s)
 	dup = (char *)malloc(sizeof(char) * len + 1);
 
 	store_dup = dup;
+
 	while (*str)
 	{
-		 *store_dup = *str;
-		  store_dup++;
-		  str++;
+		*store_dup = *str;
+		store_dup++;
+		str++;
 	}
 	*store_dup = '\0';
 
