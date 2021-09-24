@@ -48,6 +48,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	ptr = malloc(sizeof(char) * bytes);
 
+	if (!ptr)
+		return (NULL);
+
 	for (i = 0; i < s1_len; i++)
 	{
 		ptr[i] = s1[i];
