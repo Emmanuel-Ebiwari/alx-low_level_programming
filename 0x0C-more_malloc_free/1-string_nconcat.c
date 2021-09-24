@@ -44,9 +44,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n > s2_len)
 		n = s2_len;
 
-	bytes = s1_len + (s2_len - n);
+	bytes = s1_len + n;
 
-	ptr = malloc(sizeof(char) * bytes);
+	ptr = malloc(sizeof(char) * bytes + 1);
 
 	if (!ptr)
 		return (NULL);
