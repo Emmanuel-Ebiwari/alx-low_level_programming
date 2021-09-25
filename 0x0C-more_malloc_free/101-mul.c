@@ -45,7 +45,7 @@ void _puts(char *str)
 
 /**
  * main - multiplies two positive numbers
- * 
+ *
  * @argc: argument count
  * @argv: argument vector
  *
@@ -57,7 +57,8 @@ int main(int argc, char *argv[])
 
 	num1 = _atoi(argv[1]);
 	num2 = _atoi(argv[2]);
-	if (argc != 3 || (*argv[1] < '0' || *argv[1] > '9') || (*argv[2] < '0' || *argv[2] > '9'))
+	if (argc != 3 || (*argv[1] < '0' || *argv[1] > '9')
+	|| (*argv[2] < '0' || *argv[2] > '9'))
 	{
 		printf("Error\n");
 		exit(98);
