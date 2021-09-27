@@ -2,7 +2,7 @@
 #define DOG_H
 
 /**
- * struct my_struct - Short description
+ * struct dog - Short description
  * @name: character
  * @owner: character
  * @age: float
