@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * free_dog - frees the struct dog 
- * 
+ * free_dog - frees the struct dog
+ *
  * @d:pointer
  */
 void free_dog(dog_t *d)
