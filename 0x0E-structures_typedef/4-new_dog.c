@@ -1,6 +1,21 @@
 #include "dog.h"
 #include <stdlib.h>
 /**
+ *  * _strlen - returns the length of a string
+ *   *
+ *    * @s: string
+ *     * Return: length
+ *      */
+int _strlen(char *s)
+{
+	int length = 0;
+	int i;
+	for (i = 0; s[i] != '\0'; i++)
+		length = i + 1;
+	return (length);
+}
+
+/**
  * new_dog - creates a new dog
  * @name: string
  * @age: float
@@ -10,17 +25,11 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i, j, len1 = 0, len2 = 0;
+	int i, len1, len2;
 	dog_t *my_dog;
 
-	for (i = 0; name[i] != '\0'; i++)
-	{
-		len1++;
-	}
-	for (i = 0; owner[i] != '\0'; i++)
-	{
-		len2++;
-	}
+	len1 = _strlen(name);
+	len2 = _strlen(owner);
 	my_dog = malloc(sizeof(dog_t));
 	if (my_dog == NULL)
 	{
@@ -34,17 +43,18 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(my_dog);
 		return (NULL);
 	}
-	for (j = 0; j <= len1; j++)
-		my_dog->name[j] = name[j];
+	for (i = 0; i <= len1; i++)
+		my_dog->name[i] = name[i];
 	my_dog->age = age;
 	my_dog->owner = malloc(len2 * sizeof(my_dog->owner)); 
 	if (my_dog->owner == NULL)
 	{
 		free(my_dog->owner);
+		free(my_dog->name);
 		free(my_dog);
 		return (NULL);
 	} 
-	for (j = 0; j <= len2; j++)
-		my_dog->owner[j] = owner[j];
+	for (i = 0; i <= len2; i++)
+		my_dog->owner[i] = owner[i];
 	return (my_dog);
 }
