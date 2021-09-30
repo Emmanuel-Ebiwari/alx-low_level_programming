@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * print_number - prints numbers followed by a new line
+ * print_numbers - prints numbers followed by a new line
  *
  * @separator: seperators
  * @n: number of argument
@@ -19,10 +19,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		value = va_arg(ap, int);
 
-		if(separator)
+		if (separator)
 		{
 			if (i > 0)
-				printf("%s ", separator);
+				printf("%s", separator);
 		}
 		printf("%d", value);
 	}
