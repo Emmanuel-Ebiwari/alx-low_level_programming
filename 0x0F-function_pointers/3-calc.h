@@ -1,6 +1,8 @@
 #ifndef THREE_CALC_H
 #define THREE_CALC_H
 
+#include <stdio.h>
+
 /**
  * struct op - Struct op
  *
