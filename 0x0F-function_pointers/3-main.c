@@ -19,17 +19,14 @@ int main (int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	} 
-	if (argc == 4)
-	{
-		ptrf = get_op_func(argv[2]);
+	ptrf = get_op_func(argv[2]);
 
-		if (ptrf == NULL)
-		{
-			printf("Error\n");
-			exit(99);
-		}
-		ret = ptrf(atoi(argv[1]), atoi(argv[3]));
-		printf("%d\n", ret);
+	if (ptrf == NULL)
+	{
+		printf("Error\n");
+		exit(99);
 	}
+	ret = ptrf(atoi(argv[1]), atoi(argv[3]));
+	printf("%d\n", ret);
 	return (0);
 }
