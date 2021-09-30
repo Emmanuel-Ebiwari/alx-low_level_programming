@@ -9,7 +9,7 @@
  *
  * Return: 0
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int (*ptrf)(int, int);
 	int ret;
@@ -18,7 +18,7 @@ int main (int argc, char *argv[])
 	{
 		printf("Error\n");
 		exit(98);
-	} 
+	}
 	ptrf = get_op_func(argv[2]);
 
 	if (ptrf == NULL)
