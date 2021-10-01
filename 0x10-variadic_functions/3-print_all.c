@@ -10,15 +10,10 @@ void print_all(const char * const format, ...)
 {
 	va_list ap;
 	unsigned int j = 0, k = 0;
-	char c;
-	int i;
-	float f;
-	char *s;
 	char *arr = "cifs";
 
 	va_start(ap, format);
-
-	while(format[j] != '\0')
+	while (format[j] != '\0')
 	{
 		if (!format[j])
 			printf("(nil)");
@@ -29,29 +24,23 @@ void print_all(const char * const format, ...)
 			k++;
 		}
 		k = 0;
-
 		switch (format[j])
 		{
 		case 'c':
-			c = va_arg(ap, int);
-			printf("%c", c);
+			printf("%c", va_arg(ap, int));
 			break;
 		case 'i':
-			i = va_arg(ap, int);
-			printf("%d", i);
+			printf("%d", va_arg(ap, int));
 			break;
 		case 'f':
-			f = va_arg(ap, double);
-			printf("%f", f);
+			printf("%f", va_arg(ap, double*));
 			break;
 		case 's':
-			s = va_arg(ap, char*);
-			printf("%s", s);
+			printf("%s", va_arg(ap, char*));
 			break;
 		}
 		j++;
 	}
 	printf("\n");
-
 	va_end(ap);
 }
