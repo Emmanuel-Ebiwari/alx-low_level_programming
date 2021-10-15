@@ -4,7 +4,7 @@
  * to flip to get from one number to another
  *
  * @n: integer
- * @m: amount of n
+ * @m: integer
  *
  * Return: number of bits to flip
  */
@@ -17,7 +17,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	while (n > 0)
 	{
 		count++;
-		n &= (n-1);
+		n &= (n - 1);
 	}
 	return (count);
 }
