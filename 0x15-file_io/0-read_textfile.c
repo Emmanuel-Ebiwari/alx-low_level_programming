@@ -1,12 +1,12 @@
-#include <unistd.h>
-#include <stdio.h>
 #include "main.h"
 /**
  * read_textfile - reads a text file and prints it to the
  * POSIX standard output
  *
  * @filename: file
- * @letters: number of letters to be printed 
+ * @letters: number of letters to be printed
+ *
+ * Return: the amount of letters that could be printed
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
