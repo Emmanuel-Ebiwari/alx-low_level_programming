@@ -1,88 +1,83 @@
-#include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
- * no_words - function to calculate number of words
- * @s: string being passed to check for words
- *
- * Return: number of words
+ * strtow - char
+ * @str: pointer to string params
+ * Return: char
  */
-int no_words(char *s)
-{
-int i, num = 0;
-for (i = 0; s[i] != '\0'; i++)
-{
-if (*s == ' ')
-s++;
-else
-{
 
-for (; s[i] != ' ' && s[i] != '\0'; i++)
-s++;
-num++;
-}
-}
-return (num);
-}
-
-/**
- * free_everything - frees the memory
- * @string: pointer values being passed for freeing
- * @i: counter
- */
-void free_everything(char **string, int i)
-{
-for (; i > 0;)
-free(string[--i]);
-free(string);
-}
-
-/**
- * strtow - splits string into words
- * @str: string to split
- *
- * Return: pointer to an array of strings
- */
 char **strtow(char *str)
 {
-int total = 0, i = 0, j = 0, length = 0;
-char **words, *found_word;
-if (str == 0 || *str == 0)
-return (NULL);
-total = no_words(str);
-if (total == 0)
-return (NULL);
-words = malloc((total + 1) * sizeof(char *));
-if (words == 0)
-return (NULL);
-for (; *str != '\0' &&  i < total;)
-{
-if (*str == ' ')
-str++;
-else
-{
-found_word = str;
-for (; *str != ' ' && *str != '\0'; str++)
-{
-length++;
-}
-words[i] = malloc((length + 1) * sizeof(char));
-if (words[i] == 0)
-{
-free_everything(words, i);
-return (NULL);
-}
-for (; *found_word != ' ' && *found_word != '\0'; found_word++)
-{
-words[i][j] = *found_word;
-j++;
-}
-words[i][j] = '\0';
-i++;
-j = 0;
-length = 0;
-str++;
-}
-}
-return (words);
-}
+	int i = 0, j = 0, k = 0;
+	int len = 0, count = 0;
+	char **f, *col;
+
+	if (!str || !*str)
+	{
+		return (NULL);
+	}
+
+	while (*(str + i))
+	{
+		if (*(str + i) != ' ')
+		{
+			if (*(str + i + 1) == ' ' || *(str + i + 1) == 0)
+			{
+				count += 1;
+			}
+		}
+		i++;
+	}
+
+	if (count == 0)
+	{
+		return (NULL);
+	}
+	count += 1;
+	f = malloc(sizeof(char *) * count);
+
+	if (!f)
+	{
+		return (NULL);
+	}
+	i = 0;
+
+	while (*str)
+	{
+		while (*str == ' ' && *str)
+		{
+			str++;
+		}
+		len = 0;
+
+		while (*(str + len) != ' ' && *(str + len))
+		{
+			len += 1;
+		}
+		len += 1;
+		col = malloc(sizeof(char) * len);
+
+		if (!col)
+		{
+			for (k = j - 1; k >= 0; k--)
+			{
+				free(f[k]);
+			}
+			free(f);
+			return (NULL);
+		}
+
+		for (k = 0; k < (len - 1);  k++)
+		{
+			*(col + k) = *(str++);
+		}
+		*(col + k) = '\0';
+		*(f + j) = col;
+
+		if (j < (count - 1))
+		{
+			j++;
+		}
+	}
+	*(f + j) = NULL;
+	return (f);
+} /*yes*/
