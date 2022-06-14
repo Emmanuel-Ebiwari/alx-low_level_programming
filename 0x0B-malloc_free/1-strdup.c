@@ -29,6 +29,8 @@ int _strlen(char *s)
  */
 char *_strdup(char *str)
 {
+	if (!str) return;
+
 	char *dup, *store_dup;
 	int len;
 
