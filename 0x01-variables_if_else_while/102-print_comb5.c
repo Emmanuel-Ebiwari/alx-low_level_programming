@@ -1,40 +1,49 @@
-#include <stdio.h>
-
+#include <stdlib.h>
 /**
- *main - print a num pair from 00-99 but no repeats
- *Return: Always 0 (Success)
+ * main - main block
+ * Description: Write a program that prints all possible
+ * different combinations of two digits
+ * Return: 0
  */
 int main(void)
 {
-	int tens;
-	int ones;
-	int t;
-	int o;
+int c;
+int d;
+int e;
+int f = 0;
 
-	for (tens = '0'; tens <= '9'; tens++) /*print first two digit combo*/
+while (f < 10)
+{
+	e = 0;
+	while (e < 10)
 	{
-		for (ones = '0'; ones <= '9'; ones++)
+		d = 0;
+		while (d < 10)
 		{
-			for (t = tens; t <= '9'; t++) /*print second of pair*/
+			c = 0;
+			while (c < 10)
 			{
-				for (o = ones + 1; o <= '9'; o++)
+				if (!(f == c && e == d))
 				{
-					putchar(tens);
-					putchar(ones);
+					putchar('0' + f);
+					putchar('0' + e);
 					putchar(' ');
-					putchar(t);
-					putchar(o);
-					if (!((tens == '9' && ones == '8') &&
-					      (t == '9' && o == '9')))
+					putchar('0' + d);
+					putchar('0' + c);
+					if (!(f + e == 18 && c + d == 17 && d == 9))
 					{
 						putchar(',');
 						putchar(' ');
 					}
 				}
-				o = '0';
+				c++;
 			}
+			d++;
 		}
+		e++;
 	}
-	putchar('\n');
-	return (0);
+	f++;
+}
+putchar('\n');
+return (0);
 }
