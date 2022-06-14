@@ -1,54 +1,32 @@
-#include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * _strlen - returns the length of a string
- *
- * @s: string
- * Return: length
+ * _strdup - copy
+ * @str: pointer to string
+ * Return: pointer
  */
-int _strlen(char *s)
-{
-	int length = 0;
-	int i;
 
-
-	for (i = 0; s[i] != '\0'; i++)
-		length = i + 1;
-	return (length);
-}
-
-/**
- * _strdup -  returns a pointer to a newly
- * allocated space in memory
- *
- *  @str: string
- *
- *  Return: pointer
- */
 char *_strdup(char *str)
 {
+	char *s;
+	int i = 0, j;
 
-
-	char *dup, *store_dup;
-	int len;
-
-	len = _strlen(str);
-	dup = malloc((len + 1) * sizeof(char));
-	
-	if (str == NULL || dup == NULL)
+	if (!str)
 		return (NULL);
 
-	store_dup = dup;
+	while (*(str + i))
+		i++;
+	i++;
+	s = malloc(sizeof(char) * i);
 
-	while (*str)
+	if (s == NULL)
 	{
-		*store_dup = *str;
-		store_dup++;
-		str++;
+		return (NULL);
 	}
-	*store_dup = '\0';
 
-	return (dup);
+	for (j = 0; j <= i; j++)
+	{
+		s[j] = str[j];
+	}
+	return (s);
 }
